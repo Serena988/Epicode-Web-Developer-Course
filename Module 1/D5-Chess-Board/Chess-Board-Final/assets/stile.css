@@ -1,0 +1,70 @@
+h1 {
+  text-align: center;
+}
+
+.container {
+  width: 576px;
+  margin: 3rem auto 0;
+  font-size: 0;
+}
+
+.container div span {
+  position: absolute;
+}
+
+.container div div {
+  width: 70px;
+  height: 70px;
+  border: 1px solid black;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 500;
+  background: burlywood;
+  position: relative;
+}
+
+.row1 span:first-of-type {
+  transform: translateX(-50%);
+  left: 50%;
+  top: -35%;
+}
+
+.row1 div:nth-child(1) span:last-of-type {
+  transform: translateY(-50%);
+  top: 50%;
+  left: -35%;
+}
+
+.container div div:nth-child(1) span:last-of-type {
+  transform: translateY(-50%);
+  top: 50%;
+  left: -35%;
+}
+
+.row8 span:not(.row8 span:nth-child(2)) {
+  transform: translateX(-50%);
+  left:50%;
+  bottom: -35%;
+}
+
+.container div div:last-child span:last-of-type {
+  transform: translateY(-50%);
+  top: 50%;
+  right: -35%;
+}
+
+.container .container div:nth-child(odd) div:nth-child(odd) {
+  background: burlywood;
+}
+
+.container div:nth-child(odd) div:nth-child(even) {
+  background: black;
+}
+
+.container div:nth-child(even) div:nth-child(odd) {
+  background-color: black;
+}
+
+.container div div:hover {
+  background-color: red !important
+}
