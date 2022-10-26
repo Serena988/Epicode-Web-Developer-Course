@@ -65,7 +65,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 75px;
+    height: 68px;
 }
 
 .list_right {
@@ -91,7 +91,6 @@ nav {
 button {
     background: none;
     border: none;
-
     cursor: pointer;
 }
 
@@ -219,11 +218,21 @@ span {
 
 
 
+
 #right_section {
     width: 33.5%;
-    display: flex;
-    flex-flow: row wrap;
-    padding: 3rem 4rem 0 3rem;
+    padding: 2rem 4rem 0 3rem;
+}
+
+aside {
+    position: relative;
+    display: contents;
+    height: 156vh;
+}
+
+#sub-sec1 {
+    position: sticky;
+    top: -250px;
 }
 
 .twitter-connect1 {
@@ -233,6 +242,7 @@ span {
     justify-content: space-evenly;
     border-bottom: 1px solid #ececec;
     width: 55%;
+    gap:10px;
 }
 
 .twitter-connect {
@@ -274,30 +284,28 @@ span {
 }
 
 .topics_btn {
-    background-color: #eaededb0;
-    border-color: transparent
+    background-color: #4a605d1a;
+    border-color: transparent;
+    padding: 11px 20px;
+}
+
+.topics_btn:hover {
+    background: #4a605d30;
 }
 
 #recommended {
     margin-bottom: 10px;
 }
 
-.topics {
-    flex: 100%;
-}
-
-.topics_btn {
-    padding: 11px 20px;
-}
-
 .follow {
     display: flex;
+    padding-bottom: 23px;
 }
 
 .follow-content {
     width: 85%;
 }
-  
+
 .follow-title {
     flex: 100%;
 }
@@ -369,23 +377,22 @@ span {
 
 .footer-rightsec {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 60%;
+    flex-flow: row wrap;
+    width: 70%;
     align-content: center;
-    gap: 15px;
+    gap: 10px;
 }
 
-.footer-block {
+.footer-right {
     border: 1px transparent;
     padding: 1px;
 }
 
-.footer-block:hover {
+.footer-right:hover {
     padding: 1px;
     box-shadow: 0 0 5px #0000002e;
 }
 
-.footer-block a {
+.footer-right a {
     color: #757575;
 }
