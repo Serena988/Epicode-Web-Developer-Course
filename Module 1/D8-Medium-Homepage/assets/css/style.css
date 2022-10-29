@@ -1,0 +1,444 @@
+* {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: black
+}
+
+p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 16px;
+    margin: 0;
+    color: #757575;
+    margin: 0;
+    width: 83%;
+}
+
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+}
+
+h4 {
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 16px;
+    margin-top: 0.5rem;
+}
+
+body {
+    font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    max-width: 100vw;
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    background: white;
+    box-shadow: 2px 2px 9px #0000001f;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.logo img:hover {
+    box-shadow: 0 0 5px #0000002e;
+    border-radius: 20px;
+    background: #ffc017;
+    padding: 0 4px;
+}
+
+nav {
+    background: white;
+    margin: 0 7rem 0 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 68px;
+}
+
+.list-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.list-right svg {
+    padding-right: 18px;
+    color: #757575;
+    border-radius: 50%;
+    padding: 1px;
+    border-color: transparent;
+}
+
+.list-right svg:hover {
+    border-radius: 50%;
+    padding: 1px;
+    box-shadow: 0 0 5px #0000002e;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-button {
+    border: 1px solid;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border-color: #757575;
+    background: #fff;
+    color: black
+}
+
+.nav-button:hover {
+    background: black;
+    color: white;
+}
+
+.t-button {
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    color: white;
+    background: orangered;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.t-button:hover {
+    background: #ff440066;
+}
+
+main {
+    display: flex;
+}
+
+#left-section {
+    width: 66.5%;
+    border-right: 1px solid #ececec;
+    padding: 3rem 3rem 2rem 7rem;
+}
+
+.tabs {
+    border-bottom: 1px solid #ececec;
+    display: flex;
+}
+
+.tab {
+    padding: 5px 8px;
+    text-transform: uppercase;
+    color: #757575;
+    transition: color ease 1s;
+}
+
+.tab h3 {
+    margin: 1rem;
+}
+
+.tab.active,
+.tab:hover {
+    color: black;
+    border-bottom: 1px solid black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card-content {
+    flex: 1
+}
+
+.card {
+    display: flex;
+}
+
+.content {
+    padding-top: 3rem;
+}
+
+.author-btn img {
+    border-radius: 6px;
+    vertical-align: middle;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+#user-pic {
+    border-radius: 50%;
+}
+
+span {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.description {
+    font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+    line-height: 24px;
+    color: #757575;
+}
+
+.footer-block,
+.footer-btn {
+    color: #757575;
+}
+
+.footer-btn {
+    background: #4a605d1a;
+    border: 1px transparent;
+    border-radius: 15px;
+    padding: 3px 10px;
+}
+
+.footer-btn:hover {
+    background: #4a605d30;
+}
+
+.footer {
+    color: #757575;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-right {
+    padding-right: 18px;
+}
+
+.bookmark svg {
+    vertical-align: middle;
+}
+
+.card-img {
+    padding-top: 1rem;
+}
+
+.card-img img {
+    width: 180px;
+    height: 120px;
+}
+
+
+#right-section {
+    width: 33.5%;
+    padding: 2rem 4rem 0 3rem;
+}
+
+aside {
+    position: relative;
+    display: contents;
+    height: 156vh;
+}
+
+#sub-sec1 {
+    position: sticky;
+    top: -255px;
+}
+
+.right-logo img {
+    width: 32px;
+    height: 32px;
+    vertical-align: bottom
+}
+
+.twitter-connect1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom: 1px solid #ececec;
+    width: 55%;
+    gap: 10px;
+}
+
+.twitter-connect2 {
+    text-align: center;
+}
+
+.twitter-connect3 img {
+    width: 28px;
+    height: 28px;
+    vertical-align: bottom;
+}
+
+.right-btn{
+    padding: 5px 40px 5px 16px;
+}
+
+.right-btn span {
+    font-size: 14px;
+    font-weight: 400;
+    vertical-align: super;
+}
+
+.later-link a {
+    text-decoration: underline;
+    color: #757575;
+}
+
+.later-link {
+    padding: 20px 0 25px 0;
+}
+
+.recommended {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    padding-bottom: 2rem;
+    gap: 12px;
+    width: 75%;
+}
+
+.topics {
+    flex: 100%;
+}
+
+.topics-btn {
+    background-color: #4a605d1a;
+    border-color: transparent;
+}
+
+.topics-btn:hover {
+    background: #4a605d30;
+}
+
+#recommended {
+    margin-bottom: 10px;
+}
+
+.follow {
+    display: flex;
+    padding-bottom: 23px;
+}
+
+.follow-content {
+    width: 85%;
+}
+
+.follow-title {
+    flex: 100%;
+}
+
+.author-aside {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 1rem 0;
+}
+
+.author-content.author1 {
+    flex: 1;
+}
+
+.img-author img {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+
+.footer-aside {
+    display: flex;
+    gap: 5px;
+}
+
+.see-all {
+    color: #1a8917;
+    font-size: 1rem;
+}
+
+.aside3 a:hover {
+    text-decoration: underline;
+    color: #1a8917;
+}
+
+.recent-saved {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.recent-saved h4 {
+    margin-bottom: 0.5rem;
+}
+
+.aside1 {
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+}
+
+.recent-saved img {
+    vertical-align: middle;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+}
+
+#recent-img {
+    border-radius: 6px;
+}
+
+.footer-aside1,
+.footer-aside2 {
+    display: flex;
+    gap: 5px;
+}
+
+.aside2{
+    margin: 0 0 25px 0;
+}
+
+.aside3 {
+    padding-bottom: 3rem;
+}
+
+.footer-rightsec {
+    display: flex;
+    flex-flow: row wrap;
+    width: 70%;
+    align-content: center;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+
+.footer-sec2 {
+    border: 1px transparent;
+    padding: 1px;
+}
+
+.footer-sec2:hover {
+    padding: 1px;
+    box-shadow: 0 0 5px #0000002e;
+}
+
+.footer-sec2 a {
+    color: #757575;
+}
