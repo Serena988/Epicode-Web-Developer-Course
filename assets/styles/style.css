@@ -2,6 +2,10 @@ body {
   height: 100vh;
 }
 
+a {
+  text-decoration: none;
+}
+
 .nav-link img {
   width: 28px;
   height: 28px;
