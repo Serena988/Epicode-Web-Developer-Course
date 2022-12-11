@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Frank Ruhl Libre', serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#header-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    margin: 20px auto 30px;
+}
+
+#header-logo img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.div-span {
+    border-top: 2px solid #ffd977;
+    padding-bottom: 0.5%;
+    background: #fffbf1;
+    text-align: center;
+    color: #004d4d;
+    margin-top: 2em;
+}
+
+span {
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #004d4d;
+}
+
+main {
+    margin: 70px auto 40px;
+    width: 50%;
+}
+
+h1 {
+    text-align: center;
+    padding: 0 15%;
+}
+
+h1+p {
+    font-size: 1.13em;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+}
+
+main img {
+    border-radius: 18px;
+    box-shadow: 10px 10px 10px lightgrey
+}
+
+figcaption {
+    padding: 15px;
+    color: #888888;
+    text-align: center;
+    margin-top: 1em;
+}
+
+#featured {
+    display: inline-block;
+    border-left: 1.5px solid #ffd977;
+    height: 61px;
+    padding-left: 1.2em;
+    margin-top: 1em;
+    margin-bottom: 3em;
+}
+
+h2+a {
+    font-weight: 550;
+    font-size: 1.15em;
+    color: #117777
+}
+
+#featured h2 {
+    line-height: 1.8px;
+    text-transform: uppercase;
+    color: #a42323;
+}
+
+h2:not(#featured :first-child) {
+    border-bottom: 1px solid #d5ece9;
+    width: 100%;
+    padding: 1em 0 1em;
+}
+
+p,
+ul,
+ol {
+    font-weight: 500;
+}
+
+article p {
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+li {
+    margin-bottom: 1em;
+}
+
+h3 {
+    margin-top: 2em;
+}
+
+footer {
+    margin-left: 25%;
+    margin-top: -1em;
+}
+
+footer a {
+    color: #117777
+}
