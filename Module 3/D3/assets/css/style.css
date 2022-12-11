@@ -13,7 +13,6 @@ a {
 }
 
 /* navbar */
-
 .navbar.navbar-expand-lg {
   padding: 1.7rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.45);
@@ -87,18 +86,6 @@ h1 {
 
 
 /* my playlist page */
-.container-mb4 {
-  max-width: 1360px;
-}
-
-.row.row-cols-xl-4.row-cols-lg-4.row-cols-md-3.row-cols-sm-2.row-cols-2 {
-  justify-content: center;
-}
-
-.row.row-cols-xl-4.row-cols-lg-4.row-cols-md-3.row-cols-sm-2.row-cols-2 col {
-  width: 330px;
-}
-
 .card {
   background: #111111;
   padding: 16px;
