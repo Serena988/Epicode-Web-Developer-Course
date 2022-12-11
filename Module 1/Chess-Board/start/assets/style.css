@@ -1,0 +1,71 @@
+.container {
+  margin-left: 4rem;
+  margin-top: 4rem;
+}
+
+.container div {
+  width: 70px;
+  height: 60px;
+  border: 1px solid black;
+}
+
+.container div {
+  display: inline-block
+}
+
+.container div:nth-child(even) {
+  border-color: red;
+}
+
+.container div:nth-child(odd) span:nth-last-of-type(3),
+.container div:nth-child(odd) span:last-of-type {
+  color: green;
+}
+
+div:first-child~div:nth-child(2) span:last-of-type {
+  color: blue;
+}
+
+div:nth-of-type(6) span:not(:nth-child(4)) {
+  color: yellow;
+}
+
+.container div {
+  position: relative;
+}
+
+.container span:first-of-type {
+  position: absolute;
+  bottom: -35%;
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+.container span:nth-child(2) {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -35%;
+}
+
+.container div:last-child span:last-of-type {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -35%;
+}
+
+.container div:first-child span:last-child {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -35%;
+}
+
+.container {
+  font-size: 0;
+}
+
+.container div {
+  font-size: 1rem;
+}
