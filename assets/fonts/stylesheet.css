@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'progress_personal_useregular';
+    src: url('progresspersonaluse-eajdz-webfont.woff2') format('woff2'),
+        url('progresspersonaluse-eajdz-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'metropolisregular';
+    src: url('metropolis-regular.woff2') format('woff2'),
+        url('metropolis-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'metropolisbold';
+    src: url('metropolis-bold.woff2') format('woff2'),
+        url('metropolis-bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
