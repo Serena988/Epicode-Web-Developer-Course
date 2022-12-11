@@ -1,4 +1,8 @@
 /* all pages */
+html,body {
+  height: 100%;
+}
+
 body {
   padding-top: 95px;
   font-family: 'metropolisregular';
@@ -125,12 +129,13 @@ h1 {
   background-repeat: no-repeat;
   inset-inline: 0;
   top: 0;
-  bottom: 8vh;
+  bottom: 8%;
   background-color: #000000bf;
   position: absolute;
   content: "";
   z-index: 1;
   backdrop-filter: blur(16px);
+  min-height: 8vh;
 }
 
 .text-center.mb-4.pb-5 {
@@ -146,8 +151,8 @@ h1 {
   position: absolute;
   width: 100%;
   z-index: 1;
-  top: 90vh;
-  bottom: -85vh;
+  top: 90%;
+  bottom: -85%;
   transition: background-image 1s;
   min-height: 100vh;
 }
@@ -239,10 +244,6 @@ table td:last-child {
   opacity: .2;
 }
 
-.table-hall-of-shame td {
-  vertical-align: middle;
-}
-
 .table.mt-5.table-hall-of-shame tr:hover {
   background-color: #454849a1;
 }
@@ -286,16 +287,6 @@ table td:last-child {
   }
 
   /*reviews page*/
-  .page-body-inset::before {
-    top: 0;
-    bottom: 10vh;
-  }
-
-  .page-body-inset::after {
-    top: 87vh;
-    bottom: -100vh;
-  }
-
   .col.mb-3.pb-3 {
     flex-direction: column;
     align-items: center;
