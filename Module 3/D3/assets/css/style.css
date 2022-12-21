@@ -1,5 +1,6 @@
 /* all pages */
-html,body {
+html,
+body {
   height: 100%;
 }
 
@@ -8,25 +9,45 @@ body {
   font-family: 'metropolisregular';
 }
 
+main {
+  padding-bottom: 6rem;
+}
+
 a {
   text-decoration: none;
 }
 
 .bg-dark {
-  background: #0F1314 !important;
+  background: hsl(192, 14%, 7%) !important;
 }
 
-/* navbar */
+.mymusic-copyright {
+  color: hsla(0, 0%, 100%, 0.712);
+  text-transform: capitalize;
+  isolation: isolate;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.mymusic-copyright::after {
+  content: "";
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  bottom: 100%;
+  background: hsla(0, 0%, 100%, 0.184);
+  width: 400px;
+  height: 5px;
+}
+
+
+/* navbar all pages */
 .navbar.navbar-expand-lg {
   padding: 1.7rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
-  background-color: rgba(15, 17, 17, 0.92);
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.45);
+  background-color: hsla(180, 7%, 6%, 0.92);
   backdrop-filter: blur(30px);
-}
-
-div.d-flex img {
-  width: 28px;
-  height: 28px;
 }
 
 .navbar-brand {
@@ -35,22 +56,46 @@ div.d-flex img {
   text-align: center;
 }
 
-.nav-link span {
+.nav-link {
   font-family: 'progress_personal_useregular';
   text-transform: uppercase;
   font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.551);
+  color: hsla(0, 0%, 100%, 0.501);
+  transition: color ease-in-out .3s;
 }
 
-.nav-link span:hover {
-  color: rgb(255, 255, 255);
+.nav-link:hover {
+  color: hsl(0, 0%, 100%);
+}
+
+nav a[aria-current="page"] span:not(.navbar-brand) {
+  color: hsl(0, 0%, 100%);
+  text-decoration: underline hsl(0, 100%, 50%) 0.17rem;
+  text-underline-offset: 0.9rem;
+}
+
+.nav-icon {
+  opacity: .9;
+  width: 28px;
+  height: 28px;
+  position: relative;
+}
+
+.pop {
+  position: relative;
+}
+
+.pop-text {
+  opacity: 0;
+  position: absolute;
+  transform: translate(0, -100px);
 }
 
 
 /* index page */
 h1 {
   font-family: 'progress_personal_useregular';
-  color: white;
+  color: hsl(0, 0%, 100%);
   isolation: isolate;
 }
 
@@ -91,9 +136,9 @@ h1 {
 
 /* my playlist page */
 .card {
-  background: #111111;
+  background: hsl(0, 0%, 7%);
   padding: 16px;
-  border: 1px solid rgb(255 255 255 / 14%);
+  border: 1px solid hsla(0, 0%, 100%, 0.14);
 }
 
 .card-body h4 {
@@ -102,7 +147,7 @@ h1 {
 }
 
 .card-body p {
-  color: rgba(255, 255, 255, 0.551);
+  color: hsla(0, 0%, 100%, 0.551);
 }
 
 .card-text {
@@ -125,12 +170,12 @@ h1 {
 }
 
 .page-body-inset::before {
-  background: linear-gradient(to bottom, #00000000, #151111);
+  background: linear-gradient(to bottom, hsla(0, 0%, 0%, 0), hsl(0, 11%, 7%));
   background-repeat: no-repeat;
   inset-inline: 0;
   top: 0;
   bottom: 8%;
-  background-color: #000000bf;
+  background-color: hsla(0, 0%, 0%, 0.749);
   position: absolute;
   content: "";
   z-index: 1;
@@ -147,12 +192,11 @@ h1 {
 .page-body-inset::after {
   content: "";
   background-image: linear-gradient(to bottom,
-      #151111, #14191a, #0f1314);
+      hsl(0, 11%, 7%), hsl(190, 13%, 9%), hsl(192, 14%, 7%));
   position: absolute;
   width: 100%;
   z-index: 1;
   top: 90%;
-  bottom: -85%;
   transition: background-image 1s;
   min-height: 100vh;
 }
@@ -185,13 +229,13 @@ h1 {
   width: 300px;
 }
 
-.copyright {
-  color: rgba(255, 255, 255, 0.341);
+.copyright-discography {
+  color: hsla(0, 0%, 100%, 0.341);
   font-size: .8125rem;
 }
 
 .table {
-  color: white;
+  color: hsl(0, 0%, 100%);
 }
 
 .table td {
@@ -199,11 +243,11 @@ h1 {
 }
 
 .table tr {
-  border-bottom: 1px inset rgba(255, 255, 255, 0.47);
+  border-bottom: 1px inset hsla(0, 0%, 100%, 0.47);
 }
 
 .table tr:hover {
-  background-color: #454849a1;
+  background-color: hsla(195, 3%, 28%, 0.631);
 }
 
 .table th {
@@ -216,22 +260,22 @@ table td:last-child {
 
 .btn {
   border-radius: 10px;
-  color: white;
-  background: black;
+  color: hsl(0, 0%, 100%);
+  background: hsl(0, 0%, 0%);
   border: none;
   box-shadow:
-    rgba(255, 255, 255, 0.24) 0 -2px 2px inset,
-    rgba(255, 255, 255, 0.24) 1px -1px 2px inset,
-    rgba(255, 255, 255, 0.24) -1px -1px 2px inset;
+    hsla(0, 0%, 100%, 0.24) 0 -2px 2px inset,
+    hsla(0, 0%, 100%, 0.24) 1px -1px 2px inset,
+    hsla(0, 0%, 100%, 0.24) -1px -1px 2px inset;
   transition: transform 300ms ease;
 }
 
 .offcanvas.text-white {
-  background: #141515;
+  background: hsl(180, 2%, 8%);
 }
 
 .offcanvas-body.small span {
-  color: rgba(255, 255, 255, 0.523);
+  color: hsla(0, 0%, 100%, 0.523);
 }
 
 .offcanvas-title {
@@ -245,7 +289,7 @@ table td:last-child {
 }
 
 .table.mt-5.table-hall-of-shame tr:hover {
-  background-color: #454849a1;
+  background-color: hsla(195, 3%, 28%, 0.631);
 }
 
 .table.mt-5.table-hall-of-shame img {
@@ -267,16 +311,87 @@ table td:last-child {
   }
 }
 
-@media (max-width: 576px) {
-  nav .container-fluid {
-    flex-direction: column;
-    gap: 10px;
+@media (max-width: 1199px),
+(pointer:coarse) and (pointer:fine) {
+
+  .pop-text {
+    position: absolute;
+    border: 1px solid hsl(0, 0%, 100%);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0;
+    transition: transform .4s ease-out;
+    text-transform: uppercase;
+    font-family: 'metropolisbold';
+    background: hsl(180, 11%, 15%);
+    color: #ffffff;
+    z-index: 2;
+    text-align: center;
+    cursor: pointer;
   }
 
-  .navbar.navbar-expand-lg {
-    padding: 1rem 0 1.25rem 0;
+  .home {
+    transform: translate(-32px, -22px);
+  }
+
+  .playlist {
+    transform: translate(-32px, -22px);
+  }
+
+  .hall {
+    transform: translate(-13px, -22px);
+  }
+
+  .albums {
+    transform: translate(0, -22px);
   }
 }
+
+.pop-text::before {
+  content: "";
+  position: absolute;
+  border: 0 solid transparent;
+  border-top: 15px solid #ffffff;
+  border-right-width: 10px;
+  border-left-width: 10px;
+  transform: translate(-50%, -50%) rotate(180deg);
+  left: 50%;
+  top: -8px;
+}
+
+.pop-text::after {
+  content: "";
+  position: absolute;
+  border: 0 solid transparent;
+  border-top: 18px solid #212929;
+  border-right-width: 11px;
+  border-left-width: 11px;
+  transform: translate(-50%, -50%) rotate(180deg);
+  left: 50%;
+  top: -5px;
+}
+
+.pop:hover .home {
+  opacity: 1;
+  transform: translate(-23px, 38px);
+}
+
+.pop:hover .playlist {
+  opacity: 1;
+  transform: translate(-38px, 38px);
+}
+
+.pop:hover .hall {
+  opacity: 1;
+  transform: translate(-28px, 38px);
+}
+
+.pop:hover .albums {
+  opacity: 1;
+  transform: translate(-32px, 38px);
+}
+
 
 @media (max-width: 768px) {
 
@@ -286,7 +401,7 @@ table td:last-child {
     height: 30px;
   }
 
-  /*reviews page*/
+  /*albums page*/
   .col.mb-3.pb-3 {
     flex-direction: column;
     align-items: center;
@@ -298,5 +413,20 @@ table td:last-child {
 
   .mt-3.album-review {
     width: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  nav .container-fluid {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .navbar.navbar-expand-lg {
+    padding: 1rem 0 1.25rem 0;
+  }
+
+  h1 {
+    margin: 2.5rem;
   }
 }
