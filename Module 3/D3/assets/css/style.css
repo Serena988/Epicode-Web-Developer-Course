@@ -70,7 +70,7 @@ a {
 
 nav a[aria-current="page"] span:not(.navbar-brand) {
   color: hsl(0, 0%, 100%);
-  text-decoration: underline hsl(0, 100%, 50%) 0.17rem;
+  text-decoration: underline hsl(31, 100%, 50%) 0.17rem;
   text-underline-offset: 0.9rem;
 }
 
@@ -114,12 +114,109 @@ h1 {
   width: 100%;
   height: 100%;
   padding: 0;
+  z-index: 1;
+}
+
+.album-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.album-card::before {
+  content: "";
+  position: absolute;
+  border-radius: 10px;
+  inset: 0;
+  z-index: 2;
+  background-image: linear-gradient(0deg,
+      hsl(0, 0%, 0%) 0%,
+      hsla(0, 0%, 0%, 0) 50%);
+  opacity: 0.8;
+}
+
+.play {
+  position: absolute;
+  bottom: 30px;
+  border-radius: 50%;
+  background: hsl(31, 100%, 50%);
+  width: 50px;
+  height: 50px;
+  transform: translatex(-50px);
+  transition: transform .4s ease-out;
+  z-index: 3;
+  opacity: .8;
+}
+
+.play::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 7px 0 7px 10px;
+  border-color: hsla(0, 0%, 100%, 0) hsla(0, 0%, 100%, 0) hsla(0, 0%, 100%, 0) hsl(0, 0%, 100%);
+}
+
+
+.album-card:hover .play {
+  transform: translatex(15px);
+}
+
+.album-card:hover .info-album {
+  transform: translate(100%);
+}
+
+.album-card .play:hover {
+  opacity: 1;
+  transform: translatex(15px);
 }
 
 .col {
   padding: 15px 15px;
+  position: relative;
 }
 
+.info-album {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
+  padding: 10px 15px;
+  transition: transform .4s ease-in;
+}
+
+.mixed-albums.album {
+  text-transform: uppercase;
+  font-family: 'metropolisbold';
+  font-size: 1.4rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 230px;
+}
+
+.mixed-albums.artist {
+  text-transform: capitalize;
+  font-size: 1.25rem;
+  font-weight: 500;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 230px;
+}
+
+.album-title,
+.artist-info {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 
 /* index background */
 .smoke {
@@ -139,11 +236,19 @@ h1 {
   background: hsl(0, 0%, 7%);
   padding: 16px;
   border: 1px solid hsla(0, 0%, 100%, 0.14);
+  position: relative;
 }
+
+.card-body {
+  padding: 1rem 0 1rem 0;
+  transition: transform ease-in.4s;
+}
+
 
 .card-body h4 {
   text-transform: uppercase;
   font-family: 'metropolisbold';
+  margin-top: 5px;
 }
 
 .card-body p {
@@ -156,6 +261,58 @@ h1 {
   text-overflow: ellipsis;
 }
 
+.playlist {
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  bottom: 0;
+  opacity:0;
+  cursor: pointer;
+  height: 60px;
+  width: 60px;
+}
+
+.playlist::before {
+  border-width: 10px 0 10px 16px;
+}
+
+.card:hover {
+  background: hsl(0, 0%, 10%);
+  cursor: pointer;
+}
+
+.card:hover .playlist{
+  opacity: .8;
+  animation: entrance .3s ease-out both;
+}
+
+
+/* animation for play button */
+.entrance {
+  animation: entrance .3s ease-out both;
+}
+
+@keyframes entrance {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    top: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    top: 50%;
+    left: 50%;
+    bottom: 0;
+    transform-origin: 50% 100%;
+  }
+}
+
+
+.play.playlist:hover {
+  opacity: 1;
+}
 
 /* albums page */
 .background-img {
@@ -211,6 +368,48 @@ h1 {
   border-radius: 20px;
 }
 
+.table tr:hover .play-btn span:first-child {
+  visibility: hidden;
+}
+
+.table tr:hover .play-album {
+  display: inline-block;
+}
+
+.play-album:hover {
+  opacity: 1;
+}
+
+.play-btn {
+  display: flex;
+}
+
+.play-album {
+  position: absolute;
+  border-radius: 50%;
+  background: hsl(31, 100%, 50%);
+  width: 30px;
+  height: 30px;
+  opacity: .6;
+  cursor: pointer;
+  transition: all .3s ease-out;
+  display: none;
+  margin-left: -5px;
+}
+
+.play-album::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 5px 0 5px 8px;
+  border-color: hsla(0, 0%, 100%, 0) hsla(0, 0%, 100%, 0) hsla(0, 0%, 100%, 0) hsl(0, 0%, 100%);
+}
+
 .col.mb-3.pb-3 {
   display: flex;
   align-items: flex-end;
@@ -243,15 +442,11 @@ h1 {
 }
 
 .table tr {
-  border-bottom: 1px inset hsla(0, 0%, 100%, 0.47);
+  border-bottom: 1px hsla(0, 0%, 100%, 0.47);
 }
 
 .table tr:hover {
   background-color: hsla(195, 3%, 28%, 0.631);
-}
-
-.table th {
-  padding: 1.3rem 1.3rem;
 }
 
 table td:last-child {
@@ -288,8 +483,16 @@ table td:last-child {
   opacity: .2;
 }
 
-.table.mt-5.table-hall-of-shame tr:hover {
-  background-color: hsla(195, 3%, 28%, 0.631);
+.table.mt-5.table-hall-of-shame tr:hover img {
+  visibility: hidden;
+}
+
+.table.mt-5.table-hall-of-shame tr:hover .play-hall {
+  display: block;
+}
+
+.play-hall:hover {
+  opacity: 1;
 }
 
 .table.mt-5.table-hall-of-shame img {
@@ -298,11 +501,44 @@ table td:last-child {
   border-radius: 7px;
 }
 
+.table.mt-5.table-hall-of-shame th {
+  padding: 1.3rem 1.3rem;
+}
+
 .table.mt-5.table-hall-of-shame td:first-of-type {
   text-transform: uppercase;
   font-family: 'metropolisbold';
 }
 
+.d-flex.align-items-center {
+  position: relative;
+}
+
+.play-hall {
+  position: absolute;
+  border-radius: 50%;
+  background: hsl(31, 100%, 50%);
+  width: 30px;
+  height: 30px;
+  left: 10px;
+  display: none;
+  opacity: .6;
+  cursor: pointer;
+  transition: all .3s ease-out;
+}
+
+.play-hall::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 5px 0 5px 8px;
+  border-color: hsla(0, 0%, 100%, 0) hsla(0, 0%, 100%, 0) hsla(0, 0%, 100%, 0) hsl(0, 0%, 100%);
+}
 
 /* media queries */
 @media (hover: hover) and (pointer: fine) {
@@ -335,7 +571,7 @@ table td:last-child {
     transform: translate(-32px, -22px);
   }
 
-  .playlist {
+  .pop-playlist {
     transform: translate(-32px, -22px);
   }
 
@@ -377,7 +613,7 @@ table td:last-child {
   transform: translate(-23px, 38px);
 }
 
-.pop:hover .playlist {
+.pop:hover .pop-playlist {
   opacity: 1;
   transform: translate(-38px, 38px);
 }
@@ -428,5 +664,19 @@ table td:last-child {
 
   h1 {
     margin: 2.5rem;
+  }
+
+  .mymusic-copyright::after {
+    width: 300px;
+  }
+
+  /* play button index page */
+  .play {
+    width: 40px;
+    height: 40px;
+  }
+
+  .play::before {
+    border-width: 6px 0 6px 9px;
   }
 }
