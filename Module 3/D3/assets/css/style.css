@@ -569,7 +569,7 @@ table td:last-child {
 
   nav .container-fluid {
     flex-direction: column;
-    gap: 30px;
+    gap: 45px;
     align-items: center !important;
   }
 
