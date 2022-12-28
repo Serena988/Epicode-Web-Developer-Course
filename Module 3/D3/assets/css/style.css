@@ -50,6 +50,13 @@ a {
   backdrop-filter: blur(30px);
 }
 
+.navbar>.container-fluid {
+  display: flex;
+  flex-wrap: inherit;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 .navbar-brand {
   font-family: 'progress_personal_useregular';
   font-size: 1.625rem;
@@ -74,23 +81,17 @@ nav a[aria-current="page"] span:not(.navbar-brand) {
   text-underline-offset: 0.9rem;
 }
 
+.nav-link span {
+  max-width: min-content;
+  text-align: center;
+}
+
 .nav-icon {
   opacity: .9;
   width: 28px;
   height: 28px;
   position: relative;
 }
-
-.pop {
-  position: relative;
-}
-
-.pop-text {
-  opacity: 0;
-  position: absolute;
-  transform: translate(0, -100px);
-}
-
 
 /* index page */
 h1 {
@@ -161,7 +162,6 @@ h1 {
   border-width: 7px 0 7px 10px;
   border-color: hsla(0, 0%, 100%, 0) hsla(0, 0%, 100%, 0) hsla(0, 0%, 100%, 0) hsl(0, 0%, 100%);
 }
-
 
 .album-card:hover .play {
   transform: translatex(15px);
@@ -244,7 +244,6 @@ h1 {
   transition: transform ease-in.4s;
 }
 
-
 .card-body h4 {
   text-transform: uppercase;
   font-family: 'metropolisbold';
@@ -266,7 +265,7 @@ h1 {
   top: 50%;
   left: 50%;
   bottom: 0;
-  opacity:0;
+  opacity: 0;
   cursor: pointer;
   height: 60px;
   width: 60px;
@@ -281,7 +280,7 @@ h1 {
   cursor: pointer;
 }
 
-.card:hover .playlist{
+.card:hover .playlist {
   opacity: .8;
   animation: entrance .3s ease-out both;
 }
@@ -308,7 +307,6 @@ h1 {
     transform-origin: 50% 100%;
   }
 }
-
 
 .play.playlist:hover {
   opacity: 1;
@@ -502,7 +500,7 @@ table td:last-child {
 }
 
 .table.mt-5.table-hall-of-shame th {
-  padding: 1.3rem 1.3rem;
+  padding: 1.3rem 0;
 }
 
 .table.mt-5.table-hall-of-shame td:first-of-type {
@@ -549,93 +547,39 @@ table td:last-child {
 
 @media (max-width: 1199px),
 (pointer:coarse) and (pointer:fine) {
-
-  .pop-text {
-    position: absolute;
-    border: 1px solid hsl(0, 0%, 100%);
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 14px;
-    opacity: 0;
-    transition: transform .4s ease-out;
-    text-transform: uppercase;
-    font-family: 'metropolisbold';
-    background: hsl(180, 11%, 15%);
-    color: #ffffff;
-    z-index: 2;
-    text-align: center;
-    cursor: pointer;
+  nav a[aria-current="page"] span:not(.navbar-brand) {
+    text-underline-offset: .6rem;
   }
 
-  .home {
-    transform: translate(-32px, -22px);
+  .nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .pop-playlist {
-    transform: translate(-32px, -22px);
-  }
-
-  .hall {
-    transform: translate(-13px, -22px);
-  }
-
-  .albums {
-    transform: translate(0, -22px);
+  .text-center {
+    padding-top: 6rem !important;
   }
 }
 
-.pop-text::before {
-  content: "";
-  position: absolute;
-  border: 0 solid transparent;
-  border-top: 15px solid #ffffff;
-  border-right-width: 10px;
-  border-left-width: 10px;
-  transform: translate(-50%, -50%) rotate(180deg);
-  left: 50%;
-  top: -8px;
-}
+@media (max-width:850px) {
+  .text-center {
+    padding-top: 10rem !important;
+  }
 
-.pop-text::after {
-  content: "";
-  position: absolute;
-  border: 0 solid transparent;
-  border-top: 18px solid #212929;
-  border-right-width: 11px;
-  border-left-width: 11px;
-  transform: translate(-50%, -50%) rotate(180deg);
-  left: 50%;
-  top: -5px;
-}
+  nav .container-fluid {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center !important;
+  }
 
-.pop:hover .home {
-  opacity: 1;
-  transform: translate(-23px, 38px);
+  .nav-link {
+    gap: 10px;
+    font-size: 1rem;
+  }
 }
-
-.pop:hover .pop-playlist {
-  opacity: 1;
-  transform: translate(-38px, 38px);
-}
-
-.pop:hover .hall {
-  opacity: 1;
-  transform: translate(-28px, 38px);
-}
-
-.pop:hover .albums {
-  opacity: 1;
-  transform: translate(-32px, 38px);
-}
-
 
 @media (max-width: 768px) {
-
-  /* navbar icons for all pages*/
-  .nav-link img {
-    width: 30px;
-    height: 30px;
-  }
 
   /*albums page*/
   .col.mb-3.pb-3 {
@@ -653,17 +597,10 @@ table td:last-child {
 }
 
 @media (max-width: 576px) {
-  nav .container-fluid {
-    flex-direction: column;
-    gap: 40px;
-  }
 
+  /* navbar*/
   .navbar.navbar-expand-lg {
     padding: 1rem 0 1.25rem 0;
-  }
-
-  h1 {
-    margin: 2.5rem;
   }
 
   .mymusic-copyright::after {
@@ -678,5 +615,16 @@ table td:last-child {
 
   .play::before {
     border-width: 6px 0 6px 9px;
+  }
+}
+
+@media (max-width:450px) {
+  .navbar {
+    overflow-y: scroll;
+  }
+
+  .nav-link {
+    padding: 0 .875rem !important;
+    margin: 0 !important;
   }
 }
