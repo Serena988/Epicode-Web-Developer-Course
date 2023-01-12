@@ -393,6 +393,7 @@ h1 {
   transition: all .3s ease-out;
   display: none;
   margin-left: -5px;
+  margin-top: -5px;
 }
 
 .play-album::before {
